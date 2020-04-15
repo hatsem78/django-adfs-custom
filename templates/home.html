@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+  <div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Welcome to the polls app</h1>
+    <p class="lead">Use the menu above to navigate</p>
+    <div id="login">
+      <form class="form-horizontal" name="LoginForm" action="{% url 'django_auth_adfs:login_no_sso_custom' %}" method="post">
+        
+      {% csrf_token %}
+      {% if next %}
+          <input type="hidden" name="next" value="{{ next }}" />
+      {% endif %}
+      <div class="control-group">
+          <label class="control-label" for="username">Username</label>
+          <div class="controls">
+              <input type="text" id="username" name="username"  placeholder="Username">
+          </div>
+      </div>
+      <div class="control-group">
+          <label class="control-label" for="password">Password</label>
+          <div class="controls">
+              <input type="password" name="password" id="password" placeholder="Password">
+          </div>
+      </div>
+      <div class="control-group">
+          <div class="controls">
+              <button type="submit" class="btn">Login</button>
+          </div>
+      </div>
+      </form>
+  </div>
+  </div>
+
+</div>
+{% endblock %}
