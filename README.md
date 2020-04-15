@@ -1,0 +1,2 @@
+# Django integración adfs windows server
+Integración de Loguin active directory de Windows server, tiene la opción de logueo integrado con Windows y logueo con usuario y contraseña. Es una copia modificada del original que es [https://pypi.org/project/django-auth-adfs/], la cual modifique para caso practico que me toco integrar ambas solociones en un mismo proyecto.
